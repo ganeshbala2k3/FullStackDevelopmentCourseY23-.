@@ -30,18 +30,15 @@
 </head>
 <body>
     <div id="container">
-    <form onsubmit="addtaskpage(event)">
+    <form ">
     <h1>To do application</h1>
     <input type="text" name="" id="textbox" placeholder="Enter the task" >
     <input type="submit" value="Add Task" id="addtask">
+    <ul id="list-container"></ul>
     </div>
    </form>
     <script>
-        let addtaskpage=(event)=>{
-        event.preventDefault();
-        let input = document.getElementById("textbox")
-        console.log(input.value)
-        }
+
     </script>
 </body>
 </html>
