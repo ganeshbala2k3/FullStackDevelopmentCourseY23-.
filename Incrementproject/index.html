@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div{
+            border: 2px solid blueviolet;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Increment functionality</h1>
+    <button id="IncrementButton">Increment</button>
+    <h3 id="IncrementNumber"></h3>
+
+    </div>
+
+    <script>
+        let count = 0   //Declaring a variable and intialising value for the counter
+
+
+        //We are updated DOM tree , So we need to access DOM tree 
+        //for accessing we are using "documnet."
+        //to select the element from tree, we used selector "getElemenetById"
+        //To make it interactive , we are performing "click event", 
+        //after clicking , we are writing an arrow function that changes textContent of the IncrementNumber id
+        document.getElementById("IncrementButton").addEventListener("click",
+            ()=>{
+                count++
+                document.getElementById("IncrementNumber").textContent=count
+            }
+        )
+    </script>
+
+</body>
+</html>
