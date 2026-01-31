@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+</head>
+<body>
+    <h1>To do list</h1>
+    <input type="text" name="" id="textboxinput" placeholder="Enter the task">
+    <button onclick="addtaskContent()">Add Task</button>
+    <ul id="unordered-list"></ul>
+    <script>
+        function addtaskContent(){
+        let input = document.getElementById("textboxinput") //To Pick The Element into variable
+        let taskcontent = input.value   //To pick the textcontent of the variable
+        let ul = document.getElementById("unordered-list")  //to pick unorderedlist which is empty first
+        let li = document.createElement("li") //to create new element/tag
+         li.textContent=taskcontent //to assign the textcontent to add tasked text variable
+        let deletebtn = document.createElement("button")    //to create general button   
+        deletebtn.textContent="Delete Task" // to assign delete task text to button
+        deletebtn.onclick=()=>{  //to give button functionality with an event
+            li.remove()  // to remove list after clicking on delete
+        }
+        li.appendChild(deletebtn)  // to put button inside li
+        ul.appendChild(li)  //to put button inside unordered list
+        
+        }
+    </script>
+</body>
+
+</html>
