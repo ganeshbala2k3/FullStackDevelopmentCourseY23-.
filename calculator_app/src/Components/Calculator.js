@@ -6,7 +6,7 @@ const Calculator = () => {
   const [result, setResult] = useState("");
 
   const handleClick = (value) => {
-    setInput((prev) => prev + value);
+    setInput((val) => val + value);
   };
 
   const clearInput = () => {
@@ -32,7 +32,8 @@ const Calculator = () => {
       <div className="calc-buttons">
         {['7', '8', '9', '/'].map(item => (
           <button key={item} onClick={() => handleClick(item)}>{item}</button>
-        ))}
+        ))
+        }
         {['4', '5', '6', '*'].map(item => (
           <button key={item} onClick={() => handleClick(item)}>{item}</button>
         ))}
