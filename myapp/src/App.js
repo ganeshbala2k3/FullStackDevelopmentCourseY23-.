@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
-// normal JS function
-function getText() {
-  return "Hello from function";
+
+const Sample =()=>{
+
+  let count =0
+
+  return(
+    <div>
+      <h1>Increment </h1>
+      <button onClick={()=>count++}>{count}</button>
+    </div>
+  );
+
+
 }
 
-// variable
-const headingText = "Hello from variable";
-
-const Demo = () => {
-  return React.createElement(
-    "div",
-    null,
-    React.createElement("h1", null, headingText),
-    React.createElement("p", null, getText())
-  );
-};
-
-export default Demo;
+export default Sample
