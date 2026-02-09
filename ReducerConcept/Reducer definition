@@ -1,0 +1,33 @@
+### ✅ Reducer (Definition)
+
+A **reducer** is a **pure JavaScript function** that takes the **current state** and an **action**, then returns the **new updated state**.
+
+📌 Format:
+
+(state, action) => newState
+
+
+### ✅ useReducer (Definition)
+
+`useReducer` is a **React Hook** used to manage state using a **reducer function**.
+It gives you the **state** and a **dispatch function** to send actions.
+
+📌 Format:
+
+```js
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+---
+
+### 🔥 In Simple Words
+
+* **Reducer** = logic (rules for updating state)
+* **useReducer** = React tool that uses reducer to manage state
+
+---
+
+### Key Difference
+
+✅ Reducer is plain JS
+✅ useReducer is React Hook that uses reducer
