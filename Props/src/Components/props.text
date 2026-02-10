@@ -1,0 +1,10 @@
+1. The Core Concept
+In React, data flows in one direction: downward (from parent to child). Props are the "vehicles" that carry this data.
+
+Key Characteristics:
+Read-Only (Immutable): A child component can never modify the props it receives. If you need to change data, that’s what State is for.
+
+Functional Arguments: If you look at a functional component, props are just an object passed as the first argument.
+
+2. Basic Syntax
+To pass a prop, you define it on the component tag in the parent file. To receive it, you access the props object in the child.

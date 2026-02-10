@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Sample from './App';
+
+import Prop1 from './Components/props';
+import Prop2 from './Components/prop2';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Sample/>
+    <Prop2/>
   </React.StrictMode>
 );
 
