@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Calculator from './Components/calc';
+import TodoReactUpdate from './Components/todolist_with_update_option';
+import TodoReact from './Components/todolist';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Calculator/>
+    <TodoReactUpdate/>
+    <TodoReact/>
   </React.StrictMode>
 );
 

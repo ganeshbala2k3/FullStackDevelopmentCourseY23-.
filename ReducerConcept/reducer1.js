@@ -10,12 +10,19 @@
 //reduce function will take (reducer function , intial state)
 //Old state ---> New State
 
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 
 function reducer(state, action) {
   switch (action.type) {
     case "INCREMENT": 
+    {
+      useEffect(()=>{
+        console.log("count is updated");
+        
+      },count)
       return { count: state.count + 1 };
+
+    }
 
     case "DECREMENT":
       return { count: state.count - 1 };
