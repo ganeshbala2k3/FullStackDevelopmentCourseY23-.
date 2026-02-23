@@ -1,0 +1,58 @@
+windows.location.href shows url with protocal, host , path, query  https://localhost/products?id=10
+windows.location.pathname shodws path portion of url https://web/home/hello
+
+
+History Api : allows you to manipulate browser navigation history without full page reload
+history.pushState()  new entry to browser history
+
+
+
+In modern apps , JS changes Ui and Url changes via History Api
+
+workflow
+user clics -> javascript intercepts clicks-> histroy->pushState()->updates url -> react reads pathname -> reactRenders components
+
+
+
+
+Browser URL changes
+        ↓
+BrowserRouter detects change
+        ↓
+Routes checks rules
+        ↓
+Route matches path
+        ↓
+Component renders
+
+
+
+
+
+
+
+You click:
+
+https://website.com/about
+
+Process:
+
+BrowserRouter sees URL = /about
+
+Routes searches for matching Route
+
+Route with path="/about" matches
+
+About component renders
+
+
+
+
+
+<Link to="/home" />
+
+in backend : 
+history.pushUpdate({},"","/home)
+
+
+
