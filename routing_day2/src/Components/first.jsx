@@ -5,7 +5,7 @@ const First =()=>{
     return(
         <div>
             <h1>Hello I am first</h1>
-            <Link path="/third" >Third page</Link>
+            <Link to="/third" >Third page</Link>
         </div>
     );
 }
