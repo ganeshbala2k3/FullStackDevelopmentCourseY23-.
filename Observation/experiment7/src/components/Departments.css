@@ -1,0 +1,17 @@
+.departments {
+  padding: 40px;
+  text-align: center;
+}
+
+.dept-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #003366;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
