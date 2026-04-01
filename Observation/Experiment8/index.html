@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      background: #f1f3f5;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    .loading {
+      margin-top: 10px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Users List</h2>
+  <button onclick="loadUsers()">Load Users</button>
+
+  <div id="status"></div>
+  <ul id="list"></ul>
+</div>
+
+<script>
+async function loadUsers() {
+  const status = document.getElementById("status");
+  const list = document.getElementById("list");
+
+  status.innerHTML = "Loading...";
+  list.innerHTML = "";
+
+  try {
+    const res = await fetch("http://localhost:3000/users");
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch");
+    }
+
+    const data = await res.json();
+
+    status.innerHTML = "";
+
+    if (data.length === 0) {
+      status.innerHTML = "No users found";
+      return;
+    }
+
+    data.forEach(user => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${user.name}</strong><br><small>${user.email}</small>`;
+      list.appendChild(li);
+    });
+
+  } catch (err) {
+    status.innerHTML = "Error loading users";
+  }
+}
+</script>
+
+</body>
+</html>
