@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
+import axios from 'axios' //security purpose
 
 function App() {
   const [users, setUsers] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
-  const loadUsers = async () => {
-    const res = await fetch("http://localhost:3000/users");
-    const data = await res.json();
-    setUsers(data);
-  };
+  
+  
+const loadUsers = async () => {
+  const res = await axios.get("http://localhost:3000/users");
+  setUsers(res.data);
+};
 
   const addUser = async () => {
-    await fetch("http://localhost:3000/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, email })
-    });
+
+  await axios.post("http://localhost:3000/users", {
+    name,
+    email
+  });
 
     loadUsers();
   };

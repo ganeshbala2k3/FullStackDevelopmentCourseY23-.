@@ -1,10 +1,10 @@
-const http = require("http");
-const mysql = require("mysql2");
+const http = require("http"); //
+const mysql = require("mysql2"); //
 
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "db_server_password",
+  password: "StrongP@ssw0rd!2",
   database: "testdb"
 });
 

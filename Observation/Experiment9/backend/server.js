@@ -1,5 +1,5 @@
-const express = require("express");
-const cors = require("cors");
+const express = require("express"); //importing express
+const cors = require("cors"); //importing cors //cross origin resource sharing
 const mysql = require("mysql2");
 
 const app = express();
@@ -19,7 +19,7 @@ db.connect(err => {
     console.error("Database connection failed:", err);
     return;
   }
-  console.log("MySQL Connected");
+  console.log("MySQL Connected"); //call back function
 });
 
 // GET users
@@ -32,7 +32,7 @@ app.get("/users", (req, res) => {
 
 // POST user
 app.post("/users", (req, res) => {
-  const { name, email } = req.body;
+  const { name, email } = req.body; //destructuring the req body
 
   if (!name || !email) {
     return res.status(400).send("Name and email required");
